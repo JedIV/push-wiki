@@ -30,7 +30,7 @@ class MyRunnable(Runnable):
         remote_url = get_recipe_config()['remote_url']
         remote_key = get_recipe_config()['remote_key']
         
-        rc = dataikuapi.DSSClient("http://localhost:9000",api_key = "nVf4mBlWKQCDxEjlrG3tX5FqmvaUCdCD")
+        rc = dataikuapi.DSSClient(remote_url,api_key = remote_key)
 
         cp = dataiku.api_client().get_project(dataiku.default_project_key())
 
