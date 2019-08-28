@@ -23,8 +23,7 @@ class MyRunnable(Runnable):
         """
         return None
 
-    def run(self, progress_callback):
-        
+    def run(self, progress_callback):  
         
         # get remote key and url
         remote_url = get_recipe_config()['remote_url']
