@@ -41,5 +41,5 @@ class MyRunnable(Runnable):
                     l_article.delete            
                     local_wiki.create_article(article.article_id,content = article.get_data().get_body())
                     
-        return "Wiki's Updated"
+        return "Wiki Articles Updated"
         
