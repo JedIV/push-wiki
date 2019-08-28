@@ -1,5 +1,7 @@
 # This file is the actual code for the Python runnable push-to-remote
 from dataiku.runnables import Runnable
+import dataikuapi
+import dataiku
 
 class MyRunnable(Runnable):
     """The base interface for a Python runnable"""
@@ -22,9 +24,22 @@ class MyRunnable(Runnable):
         return None
 
     def run(self, progress_callback):
-        """
-        Do stuff here. Can return a string or raise an exception.
-        The progress_callback is a function expecting 1 value: current progress
-        """
-        raise Exception("unimplemented")
+        rc = dataikuapi.DSSClient("http://localhost:9000",api_key = "nVf4mBlWKQCDxEjlrG3tX5FqmvaUCdCD")
+
+        cp = dataiku.api_client().get_project(dataiku.default_project_key())
+
+        proj = rc.get_project(dataiku.default_project_key())
+
+        remote_wiki = proj.get_wiki()
+
+        local_wiki = cp.get_wiki()
+
+
+        for r_article in remote_wiki.list_articles():
+            for l_article in local_wiki.list_articles():
+                if l_article.article_id == r_article.article_id:
+                    l_article.delete            
+                    local_wiki.create_article(article.article_id,content = article.get_data().get_body())
+                    
+        return "Wiki's Updated"
         
