@@ -30,15 +30,15 @@ class MyRunnable(Runnable):
         remote_url = get_recipe_config()['remote_url']
         remote_key = get_recipe_config()['remote_key']
         
-        rc = dataikuapi.DSSClient(remote_url,api_key = remote_key)
+        rp = dataikuapi.DSSClient(remote_url,api_key = remote_key).get_project(self.project_key)
 
-        cp = dataiku.api_client().get_project(dataiku.default_project_key())
+        cp = dataiku.api_client().get_project(self.project_key)
 
         proj = rc.get_project(dataiku.default_project_key())
 
-        remote_wiki = proj.get_wiki()
+        local_wiki = proj.get_wiki()
 
-        local_wiki = cp.get_wiki()
+        remote_wiki = cp.get_wiki()
 
 
         for r_article in remote_wiki.list_articles():
