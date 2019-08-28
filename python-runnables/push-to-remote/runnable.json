@@ -56,10 +56,10 @@
     
     "params": [
         {
-            "name": "parameter1",
-            "label": "User-readable name",
+            "name": "remote_url",
+            "label": "Remote instance URL",
             "type": "STRING",
-            "description": "Some documentation for parameter1",
+            "description": "include http or https",
             "mandatory": true
         },
         {
