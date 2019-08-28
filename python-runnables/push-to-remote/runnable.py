@@ -34,18 +34,17 @@ class MyRunnable(Runnable):
 
         cp = dataiku.api_client().get_project(self.project_key)
 
-        proj = rc.get_project(dataiku.default_project_key())
 
-        local_wiki = proj.get_wiki()
+        local_wiki  = cp.get_wiki()
 
-        remote_wiki = cp.get_wiki()
+        remote_wiki = rp.get_wiki()
 
 
-        for r_article in remote_wiki.list_articles():
-            for l_article in local_wiki.list_articles():
+        for r_article in local_wiki.list_articles():
+            for l_article in remote_wiki.list_articles():
                 if l_article.article_id == r_article.article_id:
                     l_article.delete            
-                    local_wiki.create_article(article.article_id,content = article.get_data().get_body())
+                remote_wiki.create_article(l_article.article_id,content = l_article.get_data().get_body())
                     
         return '<body>Wiki Updated on instance running at: ' + remote_url + '</body>'
         
