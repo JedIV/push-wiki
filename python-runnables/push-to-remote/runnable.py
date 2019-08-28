@@ -26,20 +26,19 @@ class MyRunnable(Runnable):
     def run(self, progress_callback):
         
         
-        # set dimension column for each dataframe
+        # get remote key and url
         remote_url = get_recipe_config()['remote_url']
         remote_key = get_recipe_config()['remote_key']
-        
+
+
+        # get local and remote wikis for current project      
         rp = dataikuapi.DSSClient(remote_url,api_key = remote_key).get_project(self.project_key)
-
         cp = dataiku.api_client().get_project(self.project_key)
-
-
+        
         local_wiki  = cp.get_wiki()
-
         remote_wiki = rp.get_wiki()
 
-
+        # replace or create new articles in the project wikis
         for r_article in local_wiki.list_articles():
             for l_article in remote_wiki.list_articles():
                 if l_article.article_id == r_article.article_id:
