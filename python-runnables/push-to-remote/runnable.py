@@ -26,8 +26,8 @@ class MyRunnable(Runnable):
     def run(self, progress_callback):  
         
         # get remote key and url
-        remote_url = self.config['remote_url']
-        remote_key = self.config['remote_key']
+        remote_url = self.config.get('remote_url')
+        remote_key = self.config.get('remote_key')
 
 
         # get local and remote wikis for current project      
