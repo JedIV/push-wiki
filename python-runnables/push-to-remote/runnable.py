@@ -41,5 +41,5 @@ class MyRunnable(Runnable):
                     l_article.delete            
                     local_wiki.create_article(article.article_id,content = article.get_data().get_body())
                     
-        return '<body>Wiki Returned</body>'
+        return '<body>Wiki Updated on instance running at: ' + remote_url + '</body>'
         
