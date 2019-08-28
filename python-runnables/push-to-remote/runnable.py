@@ -24,6 +24,12 @@ class MyRunnable(Runnable):
         return None
 
     def run(self, progress_callback):
+        
+        
+        # set dimension column for each dataframe
+        remote_url = get_recipe_config()['remote_url']
+        remote_key = get_recipe_config()['remote_key']
+        
         rc = dataikuapi.DSSClient("http://localhost:9000",api_key = "nVf4mBlWKQCDxEjlrG3tX5FqmvaUCdCD")
 
         cp = dataiku.api_client().get_project(dataiku.default_project_key())
