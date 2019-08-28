@@ -4,7 +4,7 @@
     "meta": {
         "label": "Custom runnable push-to-remote",
         "description": "Custom macro",
-        "icon": "icon-puzzle-piece"
+        "icon": "icon-align-left"
     },
 
     /* whether the runnable's code is untrusted */
