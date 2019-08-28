@@ -31,7 +31,7 @@ class MyRunnable(Runnable):
 
 
         # get local and remote wikis for current project      
-        rp = dataikuapi.DSSClient(remote_url,api_key = remote_key).get_project(self.project_key)
+        rp = dataikuapi.DSSClient(remote_url, api_key = remote_key).get_project(self.project_key)
         cp = dataiku.api_client().get_project(self.project_key)
         
         local_wiki  = cp.get_wiki()
