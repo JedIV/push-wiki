@@ -27,7 +27,7 @@ class MyRunnable(Runnable):
         
         # get remote key and url
         remote_url = self.config.get('remote_url')
-        remote_key = self.config.get('remote_key')
+        remote_key = self.config.get('remote_api')
         project_key = self.project_key
 
         # get local and remote wikis for current project      
