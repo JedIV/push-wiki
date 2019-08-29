@@ -2,8 +2,8 @@
 {
     /* Meta data for display purposes */
     "meta": {
-        "label": "Custom runnable push-to-remote",
-        "description": "Custom macro",
+        "label": "Wiki Push",
+        "description": "Pushes all articles in the project wiki to a remote instance",
         "icon": "icon-align-left"
     },
 
