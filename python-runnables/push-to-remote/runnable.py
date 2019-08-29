@@ -33,8 +33,6 @@ class MyRunnable(Runnable):
         # get remote key and url
         remote_url = "http://localhost:8000"
         remote_key = "2ruzLOctve7e66bWxhc2itf8YX6SkzOz"
-        project_key = dataiku.default_project_key()
-
 
         # get local and remote wikis for current project      
         rp = dataikuapi.DSSClient(remote_url, api_key = remote_key).get_project(project_key)
