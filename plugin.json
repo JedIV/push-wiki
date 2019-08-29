@@ -19,7 +19,7 @@
         "author" : "Jed Dougherty",
 
         // The icon of a plugin must be one of the FontAwesome 3.1 icons
-        "icon" : "icon-puzzle-piece",
+        "icon" : "icon-left-align",
 
         "licenseInfo" : "Apache Software License",
 
