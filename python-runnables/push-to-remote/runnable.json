@@ -66,6 +66,7 @@
             "name": "remote_api",
             "label": "Remote instance API",
             "type": "STRING",
+            "description": "needs to be admin on remote project",
             "mandatory" : true
         }
     ]
