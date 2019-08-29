@@ -41,7 +41,7 @@ class MyRunnable(Runnable):
         for l_article in local_wiki.list_articles():
             for r_article in remote_wiki.list_articles():
                 if l_article.article_id == r_article.article_id:
-                    r_article.delete            
+                    r_article.delete()            
             remote_wiki.create_article(l_article.article_id,content = l_article.get_data().get_body())
                     
         return '<body>Wiki Updated on instance running at: ' + remote_url + '</body>'
