@@ -29,7 +29,6 @@ class MyRunnable(Runnable):
         remote_url = self.config.get('remote_url')
         remote_key = self.config.get('remote_api')
         project_key = self.project_key
-        print("this is a bad thing to do")
 
         # get local and remote wikis for current project      
         rp = dataikuapi.DSSClient(remote_url, api_key = remote_key).get_project(project_key)
