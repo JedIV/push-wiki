@@ -24,6 +24,7 @@ class MyRunnable(Runnable):
         return None
 
     def run(self, progress_callback):  
+        # You should really comment your code better
         
         # get remote key and url
         remote_url = self.config.get('remote_url')
